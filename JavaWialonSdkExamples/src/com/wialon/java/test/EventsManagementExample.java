@@ -34,9 +34,9 @@ public class EventsManagementExample implements Runnable {
 	// Login to server
 	private void login(){
 		// initialize Wialon session
-		session.initSession("http://hst-api.wialon.com");
+		session.initSession("https://local3.overseer.ua");
 		// trying login
-		session.loginToken("2fe8024e0ab91aa6c8ed82717b71bddcECDC362358DF7D90986F5173D405CD0D42DE7B38", new ResponseHandler() {
+		session.loginToken("bbe8d60e3d5c69ec30d0519750b0c8707459F3DAB607BC434346CC128EB4E115BE565F16", new ResponseHandler() {
 			@Override
 			public void onSuccess(String response) {
 				super.onSuccess(response);

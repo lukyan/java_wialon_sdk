@@ -1,7 +1,12 @@
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 archivesBaseName = 'wialon-sdk-examples'
-sourceCompatibility = 1.6
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
 version = '1.1.7'
 
 sourceSets {
@@ -16,19 +21,28 @@ sourceSets {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    maven { url 'https://plugins.gradle.org/m2/' }
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion = '7.4.1'
 }
 
 dependencies {
-    compile 'org.apache.directory.studio:org.apache.commons.codec:1.6'
-    compile 'commons-logging:commons-logging:1.1.1'
-    compile 'org.apache.httpcomponents:fluent-hc:4.2.5'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'org.apache.httpcomponents:httpclient:4.2.5'
-    compile 'org.apache.httpcomponents:httpclient-cache:4.3.5'
-    compile 'org.apache.httpcomponents:httpcore:4.2.4'
-    compile 'org.apache.httpcomponents:httpmime:4.2.5'
-//    compile 'com.squareup.okhttp:okhttp:2.0.0'
-//    compile 'com.squareup.okio:okio:1.0.1'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'org.apache.directory.studio:org.apache.commons.codec:1.6'
+//    implementation 'commons-logging:commons-logging:1.2'
+//    implementation 'org.apache.httpcomponents:fluent-hc:4.2.5'
+//    implementation 'com.google.code.gson:gson:2.2.4'
+//    implementation 'org.apache.httpcomponents:httpclient:4.2.5'
+//    implementation 'org.apache.httpcomponents:httpclient-cache:4.3.5'
+//    implementation 'org.apache.httpcomponents:httpcore:4.2.4'
+//    implementation 'org.apache.httpcomponents:httpmime:4.2.5'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient-cache', version: '4.5.13'
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
+    implementation group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
