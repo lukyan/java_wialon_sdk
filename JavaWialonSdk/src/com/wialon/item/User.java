@@ -172,7 +172,7 @@ public class User extends Item {
 
 	private void setUserFlags(Long userFlags) {
 		if (this.fl==null || !this.fl.equals(userFlags)) {
-			Long oldFlags=this.fl==null ? null : new Long(this.fl);
+			Long oldFlags=this.fl==null ? null : Long.valueOf(this.fl);
 			this.fl = userFlags;
 			fireEvent(events.changeUserFlags, this, oldFlags, userFlags);
 		}

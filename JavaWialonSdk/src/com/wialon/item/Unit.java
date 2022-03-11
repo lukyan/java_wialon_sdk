@@ -95,7 +95,7 @@ public class Unit extends ItemIcon {
 	 */
 	private void setDeviceTypeId(Long deviceTypeId) {
 		if (this.hw==null || !this.hw.equals(deviceTypeId)) {
-			Long oldHw=this.hw==null ? null : new Long(this.hw);
+			Long oldHw=this.hw==null ? null : Long.valueOf(this.hw);
 			this.hw = deviceTypeId;
 			fireEvent(events.changeDeviceTypeId, this, oldHw, hw);
 		}
@@ -193,7 +193,7 @@ public class Unit extends ItemIcon {
 	 */
 	private void setCalcFlags(Long calcFlags) {
 		if (this.cfl==null || !this.cfl.equals(calcFlags)) {
-			Long oldFlags=this.cfl==null ? null : new Long(cfl);
+			Long oldFlags=this.cfl==null ? null : Long.valueOf(cfl);
 			this.cfl = calcFlags;
 			fireEvent(events.changeCalcFlags, this, oldFlags, cfl);
 		}
@@ -213,7 +213,7 @@ public class Unit extends ItemIcon {
 	 */
 	private void setMileageCounter(Long mileageCounter) {
 		if (this.cnm==null || !this.cnm.equals(mileageCounter)) {
-			Long oldMileage=this.cnm==null ? null : new Long(cnm);
+			Long oldMileage=this.cnm==null ? null : Long.valueOf(cnm);
 			this.cnm = mileageCounter;
 			fireEvent(events.changeMileageCounter, this, oldMileage, cnm);
 		}
@@ -233,7 +233,7 @@ public class Unit extends ItemIcon {
 	 */
 	private void setEngineHoursCounter(Long engineHoursCounter) {
 		if (this.cneh==null || !this.cneh.equals(engineHoursCounter)) {
-			Long oldEngine=this.cneh==null ? null : new Long(cneh);
+			Long oldEngine=this.cneh==null ? null : Long.valueOf(cneh);
 			this.cneh = engineHoursCounter;
 			fireEvent(events.changeEngineHoursCounter, this, oldEngine, cneh);
 		}
@@ -253,7 +253,7 @@ public class Unit extends ItemIcon {
 	 */
 	private void setTrafficCounter(Long trafficCounter) {
 		if (cnkb==null || !cnkb.equals(trafficCounter)) {
-			Long oldTraffic= cnkb==null ? null : new Long(cnkb);
+			Long oldTraffic= cnkb==null ? null : Long.valueOf(cnkb);
 			this.cnkb = trafficCounter;
 			fireEvent(events.changeTrafficCounter, this, oldTraffic, cnkb);
 		}

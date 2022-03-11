@@ -35,7 +35,7 @@ public class ItemIcon extends Item {
 
 	private void setUgi(Integer ugi) {
 		if (this.ugi == null || !this.ugi.equals(ugi)) {
-			Integer oldUgi = this.ugi == null ? null : new Integer(this.ugi);
+			Integer oldUgi = this.ugi == null ? null : Integer.valueOf(this.ugi);
 			this.ugi = ugi;
 			fireEvent(events.changeIcon, this, oldUgi, ugi);
 		}

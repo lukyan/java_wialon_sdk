@@ -181,7 +181,7 @@ public abstract class Item extends EventProvider {
 
 	private void setMeasureUnits(Integer measureUnits) {
 		if (this.mu==null || !this.mu.equals(measureUnits)){
-			Integer oldMeasureUnits=this.mu==null ? null : new Integer(measureUnits);
+			Integer oldMeasureUnits=this.mu==null ? null : Integer.valueOf(measureUnits);
 			mu = measureUnits;
 			fireEvent(events.changeMeasureUnits, this, oldMeasureUnits, measureUnits);
 		}
@@ -189,7 +189,7 @@ public abstract class Item extends EventProvider {
 
 	private void setUserAccess(Long userAccessLevel) {
 		if (this.uacl==null || !this.uacl.equals(userAccessLevel)) {
-			Long oldAcl=this.uacl==null ? null : new Long(uacl);
+			Long oldAcl=this.uacl==null ? null : Long.valueOf(uacl);
 			this.uacl = userAccessLevel;
 			fireEvent(events.changeUserAccess, this, oldAcl, userAccessLevel);
 		}
@@ -209,7 +209,7 @@ public abstract class Item extends EventProvider {
 
 	public void setDataFlags(Long dataFlags) {
 		if (this.dataFlags==null || !this.dataFlags.equals(dataFlags)) {
-			Long oldFlags=this.dataFlags==null ? null : new Long(this.dataFlags);
+			Long oldFlags=this.dataFlags==null ? null : Long.valueOf(this.dataFlags);
 			this.dataFlags = dataFlags;
 			fireEvent(events.changeDataFlags, this, oldFlags, dataFlags);
 		}
