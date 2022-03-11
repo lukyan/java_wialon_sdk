@@ -46,5 +46,5 @@ dependencies {
     implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.13'
     implementation group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.lukyan:java_wialon_sdk:java11'
+    implementation 'com.github.lukyan:java-wialon-sdk:java11'
 }
